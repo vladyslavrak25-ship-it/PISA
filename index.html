@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PISA: сім'я, школа і розрив у балах</title>
-<meta name="description" content="Інтерактивний огляд шести досліджень PISA: як статус сім'ї та склад школи пов'язані з результатами учнів в Україні, Естонії, Чехії, Польщі, Бразилії та Грузії.">
+<title>PISA: family, school and the score gap</title>
+<meta name="description" content="An interactive overview of six PISA studies: how family status and school composition relate to student results in Ukraine, Estonia, Czechia, Poland, Brazil and Georgia.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='16' r='5' fill='%23CFE0FA' stroke='%23142033'/%3E%3Ccircle cx='24' cy='16' r='5' fill='%231B439A'/%3E%3Cpath d='M13 16h6' stroke='%23142033' stroke-width='2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,22 +155,22 @@ footer p{max-width:76ch}
 
 <header class="hero">
   <div class="wrap">
-    <div class="mast" aria-hidden="true"><i></i><i></i><span>PISA · навчальний проєкт KSE</span></div>
-    <h1>Скільки балів PISA відділяє бідних учнів від багатих</h1>
-    <p class="lede">Ми зібрали разом шість досліджень PISA: Естонія, Чехія, Польща, Бразилія, Україна, Грузія та ще 11 країн ЄС. Обери країну угорі сторінки, і кожен блок покаже її дані. Біля кожного числа вказано, з якої роботи воно взяте.</p>
+    <div class="mast" aria-hidden="true"><i></i><i></i><span>PISA · KSE student project</span></div>
+    <h1>How many PISA points separate poor students from rich ones</h1>
+    <p class="lede">We bring together six PISA studies: Estonia, Czechia, Poland, Brazil, Ukraine, Georgia, plus 11 more EU countries. Pick a country at the top of the page and every block will show its data. Next to each number we say which study it comes from.</p>
 
     <div class="explain">
-      <div><b>Бали PISA</b>Тест для 15-річних із математики, читання і природничих наук. Середнє по ОЕСР близько 500.</div>
-      <div><b>ESCS</b>Індекс статусу сім'ї: освіта і професія батьків та речі вдома. Чим вище, тим «багатша» сім'я.</div>
-      <div><b>Q1 і Q4</b>Усіх учнів країни ділять на чотири рівні групи за ESCS. Q1 — чверть із найнижчим статусом, Q4 — із найвищим.</div>
-      <div><b>Розрив Q4−Q1</b>На скільки балів у середньому Q4 випереджає Q1. Це зв'язок, а не доведена причина.</div>
+      <div><b>PISA scores</b>A test of 15-year-olds in math, reading and science. The OECD average is about 500.</div>
+      <div><b>ESCS</b>An index of family status: parents’ education and occupation, and possessions at home. The higher it is, the “richer” the family.</div>
+      <div><b>Q1 and Q4</b>All students in a country are split into four equal groups by ESCS. Q1 is the quarter with the lowest status, Q4 the quarter with the highest.</div>
+      <div><b>Q4−Q1 gap</b>By how many points Q4 students score above Q1 students on average. This is an association, not a proven cause.</div>
     </div>
   </div>
 </header>
 
-<nav class="bar" aria-label="Вибір країни">
+<nav class="bar" aria-label="Choose a country">
   <div class="wrap">
-    <label id="cl">Країна</label>
+    <label id="cl">Country</label>
     <div class="pills" role="radiogroup" aria-labelledby="cl" id="pills"></div>
   </div>
 </nav>
@@ -180,26 +180,26 @@ footer p{max-width:76ch}
 <!-- 1. gap -->
 <section id="gap">
   <div class="sectionhead">
-    <h2>Розрив між найбіднішими й найбагатшими</h2>
-    <p>Кожен рядок — країна, чотири крапки — чотири чверті за статусом сім'ї. Чим далі крапки одна від одної, тим більший розрив. Натисни на рядок, щоб вибрати країну.</p>
+    <h2>The gap between the poorest and the richest</h2>
+    <p>Each row is a country, and the four dots are the four quarters by family status. The farther apart the dots, the bigger the gap. Click a row to choose a country.</p>
   </div>
   <div class="card">
-    <div class="cardhead"><h3>Середній бал з математики за чвертями ESCS</h3>
-      <span><span class="src">Робота 1.1</span><span class="src">Робота 1.3 (Україна)</span></span></div>
-    <p class="sub">Країни впорядковано за розривом. Україна — з роботи 1.3, решта — з роботи 1.1.</p>
+    <div class="cardhead"><h3>Average math score by ESCS quarter</h3>
+      <span><span class="src">Study 1.1</span><span class="src">Study 1.3 (Ukraine)</span></span></div>
+    <p class="sub">Countries are ordered by gap. Ukraine is from Study 1.3, the rest from Study 1.1.</p>
     <div class="legend" aria-hidden="false">
-      <span><i style="background:var(--q1)"></i>Q1: найнижчий статус</span><span><i style="background:var(--q2)"></i>Q2</span><span><i style="background:var(--q3)"></i>Q3</span><span><i style="background:var(--q4)"></i>Q4: найвищий статус</span>
+      <span><i style="background:var(--q1)"></i>Q1: lowest status</span><span><i style="background:var(--q2)"></i>Q2</span><span><i style="background:var(--q3)"></i>Q3</span><span><i style="background:var(--q4)"></i>Q4: highest status</span>
     </div>
     <div id="hero-chart"></div>
-    <details><summary>Показати таблицею</summary><div class="tablewrap" id="hero-table"></div></details>
+    <details><summary>Show as a table</summary><div class="tablewrap" id="hero-table"></div></details>
   </div>
   <div class="kpis" id="kpis"></div>
   <div class="note" id="gap-note"></div>
 
   <div class="card" style="margin-top:18px">
-    <div class="cardhead"><h3>Дві незалежні роботи, той самий результат</h3>
-      <span><span class="src">Робота 1.1</span><span class="src">Звіт про 11 країн ЄС</span></span></div>
-    <p class="sub">Для Естонії, Чехії та Польщі є дві окремі роботи. Вони брали різні предмети (математика і природничі науки), але розрив і частка дисперсії майже збігаються. Це підсилює довіру до цифр.</p>
+    <div class="cardhead"><h3>Two independent studies, the same result</h3>
+      <span><span class="src">Study 1.1</span><span class="src">11-country EU report</span></span></div>
+    <p class="sub">For Estonia, Czechia and Poland there are two separate studies. They used different subjects (math and science), yet the gap and the share of variance are almost the same. That makes the numbers more trustworthy.</p>
     <div class="tablewrap"><table id="cross"></table></div>
   </div>
 </section>
@@ -207,43 +207,43 @@ footer p{max-width:76ch}
 <!-- 2. anatomy -->
 <section id="anatomy">
   <div class="sectionhead">
-    <h2>З чого складається розрив: родина чи школа</h2>
-    <p>Діти з багатших сімей частіше вчаться у «багатших» школах. Тому розрив між Q4 і Q1 має дві частини: <b>власний статус сім'ї</b> (учень із вищим ESCS у будь-якій школі) і <b>школа</b> (середній статус її учнів). Робота 1.1 порахувала обидва ефекти, а ми з них відновили, скільки балів припадає на кожен.</p>
+    <h2>What the gap is made of: family or school</h2>
+    <p>Children from richer families more often attend “richer” schools. So the gap between Q4 and Q1 has two parts: the <b>family’s own status</b> (a student with higher ESCS in any school) and the <b>school</b> (the average status of its students). Study 1.1 estimated both effects, and from them we worked out how many points belong to each.</p>
   </div>
   <div class="card">
-    <div class="cardhead"><h3>Частини розриву Q4−Q1, бали з математики</h3><span><span class="src">Робота 1.1</span><span class="src">Розрахунок сайту</span></span></div>
-    <p class="sub">Чотири країни з роботи 1.1. Для України розкласти не можна: у файлі роботи 1.3 немає номерів шкіл.</p>
-    <div class="legend"><span><i class="sq" style="background:var(--own)"></i>Власний статус сім'ї</span><span><i class="sq" style="background:var(--school)"></i>Школа (склад учнів)</span><span><i class="sq" style="background:var(--rest)"></i>Не пояснено моделлю</span></div>
+    <div class="cardhead"><h3>Parts of the Q4−Q1 gap, math points</h3><span><span class="src">Study 1.1</span><span class="src">Site calculation</span></span></div>
+    <p class="sub">Four countries from Study 1.1. Ukraine cannot be split: the Study 1.3 file has no school IDs.</p>
+    <div class="legend"><span><i class="sq" style="background:var(--own)"></i>Family’s own status</span><span><i class="sq" style="background:var(--school)"></i>School (student mix)</span><span><i class="sq" style="background:var(--rest)"></i>Not explained by the model</span></div>
     <div id="anat-chart"></div>
-    <details><summary>Як це пораховано</summary>
-      <p style="margin-top:10px">Робота 1.1 подає для кожної країни дві стандартизовані оцінки з однієї регресії: вплив власного ESCS учня (βвл) і вплив середнього ESCS його школи (βшк). Також є частка відмінностей статусу між школами (ICC ESCS) та розрив у стандартних відхиленнях (d). Із них:</p>
-      <div class="formula">SD балів = розрив ÷ d<br>власна частина = 2 × βвл × 1,271 × SD<br>шкільна частина = 2 × βшк × 1,271 × √ICC(ESCS) × SD<br>решта = спостережуваний розрив − власна − шкільна</div>
-      <p>Число 1,271 — середнє значення нижньої чверті стандартного нормального розподілу; ми припускаємо, що ESCS розподілений приблизно нормально. Сума двох частин відтворює реальні розриви з похибкою 3–9 балів, тож розклад правдоподібний. Але це наша оцінка на даних роботи 1.1, у самій роботі такого розкладу немає. Усе нижче — зв'язки, а не доведені причини.</p>
+    <details><summary>How this is calculated</summary>
+      <p style="margin-top:10px">For each country, Study 1.1 gives two standardized estimates from one regression: the effect of the student’s own ESCS (β_own) and the effect of the school’s average ESCS (β_school). It also gives the share of ESCS variation that lies between schools (ICC of ESCS) and the gap in standard deviations (d). From these:</p>
+      <div class="formula">SD in points = gap ÷ d<br>own part = 2 × β_own × 1.271 × SD<br>school part = 2 × β_school × 1.271 × √ICC(ESCS) × SD<br>remainder = observed gap − own − school</div>
+      <p>The number 1.271 is the mean of the bottom quarter of a standard normal distribution; we assume ESCS is roughly normally distributed. The two parts add up to the real gaps within 3–9 points, so the split is plausible. But it is our own estimate built on Study 1.1’s data; the study itself does not contain this split. Everything below is association, not proven cause.</p>
     </details>
   </div>
-  <div class="note"><p><strong>Що це означає.</strong> Школа дає близько 80% розриву в Польщі, 57–58% у Чехії та Бразилії і лише 31% в Естонії (решта — власний статус сім'ї й невеликий залишок). Робота 1.1 пише про це як про «ефект складу», бо виміряні ресурси шкіл додають лише 1–4 в.п. до пояснених відмінностей.</p></div>
+  <div class="note"><p><strong>What this means.</strong> School accounts for about 80% of the gap in Poland, 57–58% in Czechia and Brazil, and only 31% in Estonia (the rest is the family’s own status and a small remainder). Study 1.1 calls this a “composition effect”, because measured school resources add only 1–4 percentage points to the explained differences.</p></div>
 </section>
 
 <!-- 3. simulator -->
 <section id="sim">
   <div class="sectionhead">
-    <h2>Симулятор: що буде, якщо менше розділяти учнів за школами</h2>
-    <p>Повзунки змінюють лише ту частину розриву, яку ми оцінили вище. Це не прогноз реформи, а «що було б, якби зв'язок зі складом школи був причинним». Повзунок про допомогу сім'ям ми прибрали: жодна з робіт не оцінює ефект такого втручання, а PISA не є експериментом.</p>
+    <h2>Simulator: what if students were less separated by school</h2>
+    <p>The sliders change only the part of the gap we estimated above. This is not a reform forecast, but a “what if the link to school composition were causal”. We removed the slider for helping families: none of the studies estimates the effect of such an intervention, and PISA is not an experiment.</p>
   </div>
   <div class="card">
     <div class="simgrid">
       <div>
         <div class="ctl">
-          <div class="top"><label for="sd">Десегрегація шкіл</label><output id="sdv">0%</output></div>
+          <div class="top"><label for="sd">School desegregation</label><output id="sdv">0%</output></div>
           <input type="range" id="sd" min="0" max="100" value="0" aria-describedby="sdh">
-          <p id="sdh">0% — як зараз. 100% — у кожній школі середній за країною склад учнів за статусом сім'ї.</p>
+          <p id="sdh">0% — as it is now. 100% — every school has the country-average mix of students by family status.</p>
         </div>
         <div class="ctl">
-          <div class="top"><label for="sr">Вирівнювання ресурсів шкіл</label><output id="srv">0%</output></div>
+          <div class="top"><label for="sr">Equalizing school resources</label><output id="srv">0%</output></div>
           <input type="range" id="sr" min="0" max="100" value="0" aria-describedby="srh">
-          <p id="srh">Верхня оцінка: ресурси (нестача матеріалів і кадрів, керівництво, розмір класів) додають лише 1–4 в.п. до пояснених відмінностей між школами (робота 1.1), тож їхній внесок малий.</p>
+          <p id="srh">Upper estimate: resources (shortages of materials and staff, leadership, class size) add only 1–4 percentage points to the explained differences between schools (Study 1.1), so their contribution is small.</p>
         </div>
-        <button class="btn" id="simreset" type="button">Скинути</button>
+        <button class="btn" id="simreset" type="button">Reset</button>
       </div>
       <div>
         <div class="result" id="simres"></div>
@@ -257,87 +257,87 @@ footer p{max-width:76ch}
 <!-- 4. capital -->
 <section id="capital">
   <div class="sectionhead">
-    <h2>Що саме в сім'ї працює: освіта, професія чи речі вдома</h2>
-    <p>ESCS складається з трьох частин. Нижче показано, наскільки кожна з них пов'язана з балом, коли дві інші зафіксовані. Висновок залежить від країни: у Європі важать освіта і професія батьків, у Бразилії — речі вдома.</p>
+    <h2>What matters in the family: education, occupation or possessions</h2>
+    <p>ESCS has three components. Below is how strongly each is linked to the score when the other two are held fixed. The conclusion depends on the country: in Europe parents’ education and occupation matter, in Brazil possessions at home do.</p>
   </div>
-  <div class="legend"><span><i class="sq" style="background:var(--cap1)"></i>Професія батьків (HISEI)</span><span><i class="sq" style="background:var(--cap2)"></i>Освіта батьків (PAREDINT)</span><span><i class="sq" style="background:var(--cap3)"></i>Речі вдома (HOMEPOS)</span></div>
+  <div class="legend"><span><i class="sq" style="background:var(--cap1)"></i>Parents’ occupation (HISEI)</span><span><i class="sq" style="background:var(--cap2)"></i>Parents’ education (PAREDINT)</span><span><i class="sq" style="background:var(--cap3)"></i>Possessions at home (HOMEPOS)</span></div>
   <div class="caps" id="caps"></div>
-  <p class="sub" style="margin-top:12px">Стандартизований коефіцієнт β: наскільки стандартних відхилень бала змінюється при зростанні фактора на одне стандартне відхилення. Лінія — 95% інтервал. «н/з» — не відрізняється від нуля. Країни з роботи 1.1, Україна — з роботи 1.3.</p>
+  <p class="sub" style="margin-top:12px">Standardized coefficient β: by how many standard deviations the score changes when the factor rises by one standard deviation. The line is the 95% interval. “n.s.” means not different from zero. Countries are from Study 1.1, Ukraine from Study 1.3.</p>
   <div class="note" id="cap-note"></div>
-  <details><summary>Показати таблицею</summary><div class="tablewrap" id="cap-table"></div></details>
+  <details><summary>Show as a table</summary><div class="tablewrap" id="cap-table"></div></details>
 </section>
 
 <!-- 5. ladder -->
 <section id="ukraine">
   <div class="sectionhead">
-    <h2>Де на цій шкалі Україна</h2>
-    <p>Частка відмінностей в балах, яку пояснює статус сім'ї (R²), для всіх країн із наших робіт. Чим праворуч, тим сильніше результат залежить від ESCS.</p>
+    <h2>Where Ukraine sits on this scale</h2>
+    <p>The share of score differences explained by family status (R²), for all countries in our studies. The further right, the more strongly results depend on ESCS.</p>
   </div>
   <div class="card">
-    <div class="cardhead"><h3>Скільки відмінностей у балах пояснює ESCS</h3><span><span class="src">Робота 1.1</span><span class="src">Робота 1.3</span><span class="src">Робота 1.5</span><span class="src">Звіт про 11 країн ЄС</span></span></div>
-    <p class="sub">Різні предмети й цикли показано різними фігурами, їх не можна точно порівнювати між собою.</p>
-    <div class="legend"><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><circle cx="7" cy="7" r="5.5" fill="var(--own)"/></svg>Наука, PISA 2025 (звіт про 11 країн)</span><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><path d="M7 1l6 6-6 6-6-6z" fill="var(--school)"/></svg>Математика (роботи 1.1, 1.3)</span><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><rect x="2" y="2" width="10" height="10" fill="none" stroke="var(--ink2)" stroke-width="2"/></svg>Математика, Грузія, PISA 2022 (робота 1.5)</span></div>
+    <div class="cardhead"><h3>How much of the score variation ESCS explains</h3><span><span class="src">Study 1.1</span><span class="src">Study 1.3</span><span class="src">Study 1.5</span><span class="src">11-country EU report</span></span></div>
+    <p class="sub">Different subjects and cycles are shown with different shapes; they cannot be compared exactly.</p>
+    <div class="legend"><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><circle cx="7" cy="7" r="5.5" fill="var(--own)"/></svg>Science, PISA 2025 (11-country report)</span><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><path d="M7 1l6 6-6 6-6-6z" fill="var(--school)"/></svg>Math (Studies 1.1, 1.3)</span><span><svg width="14" height="14" viewBox="0 0 14 14" style="width:14px"><rect x="2" y="2" width="10" height="10" fill="none" stroke="var(--ink2)" stroke-width="2"/></svg>Math, Georgia, PISA 2022 (Study 1.5)</span></div>
     <div id="ladder-chart"></div>
-    <details><summary>Показати таблицею</summary><div class="tablewrap" id="ladder-table"></div></details>
+    <details><summary>Show as a table</summary><div class="tablewrap" id="ladder-table"></div></details>
   </div>
   <div class="note">
-    <p><strong>Чому українське значення — найімовірніше нижня межа.</strong> У роботі 1.3 учні без даних про професію батьків (22,7% вибірки) мали в середньому 385,8 бала проти 444,3 в інших, а без ESCS (7%) — 366,0 проти 436,0. Їх виключено з оцінок, тож нерівність недооцінено. Робота 1.4 додає, що 17 з 27 областей включено у вибірку, а прифронтові виключено; вона очікує, що це теж занижує зв'язок.</p>
-    <p><strong>Чого ми ще не знаємо.</strong> Робота 1.1 стверджує, що України немає у відкритому файлі PISA 2025. Робота 1.3 сама пише, що не знає цикл свого файлу, а 1.4 називає ті самі 7 105 учнів «PISA 2025». Допоки це не з'ясовано, українську крапку слід читати обережно.</p>
+    <p><strong>Why the Ukrainian value is most likely a lower bound.</strong> In Study 1.3, students with no data on parents’ occupation (22.7% of the sample) averaged 385.8 points versus 444.3 for the rest, and those with no ESCS (7%) averaged 366.0 versus 436.0. They were excluded from the estimates, so inequality is understated. Study 1.4 adds that 17 of 27 regions are in the sample and frontline regions are excluded; it expects this to understate the link as well.</p>
+    <p><strong>What we still don’t know.</strong> Study 1.1 states that Ukraine is not in the public PISA 2025 file. Study 1.3 itself says it does not know the cycle of its file, and 1.4 calls the same 7,105 students “PISA 2025”. Until this is resolved, read the Ukrainian dot with caution.</p>
   </div>
 </section>
 
 <!-- 6. common -->
 <section id="common">
   <div class="sectionhead">
-    <h2>Що спільного між роботами</h2>
-    <p>Шість текстів написані різними авторами, але складаються в одну історію.</p>
+    <h2>What the studies have in common</h2>
+    <p>Six texts by different authors, but together they tell one story.</p>
   </div>
   <div class="finds">
-    <div class="find"><h3>Одне питання, різні теорії</h3>
-      <p>Роботи 1.1, 1.3, 1.5 і звіт про 11 країн перевіряють ідею Бурдьє та теорії конфлікту: школа відтворює нерівність. Робота 1.2 дивиться з боку функціоналізму: старанність і амбіції можуть її компенсувати. Робота 1.4 — план дослідження для чотирьох теорій, але без результатів.</p>
-      <div class="tags"><span class="src">1.1</span><span class="src">1.2</span><span class="src">1.3</span><span class="src">1.4</span><span class="src">1.5</span><span class="src">Звіт 11 країн</span></div></div>
-    <div class="find"><h3>Склад школи важливіший за гроші</h3>
-      <p>Роботи 1.1 і 1.5 незалежно дійшли одного: матеріальні ресурси школи майже не пояснюють відмінності. У 1.1 вони додають 1–4 в.п. до R². У Грузії (1.5) нестача ресурсів не пов'язана з балами (r = −0,03). Звіт про 11 країн додає: перевага відбірних шкіл зменшується на 12–65 балів після врахування статусу учнів і школи.</p>
-      <div class="tags"><span class="src">1.1</span><span class="src">1.5</span><span class="src">Звіт 11 країн</span></div></div>
-    <div class="find"><h3>Відбір працює не всюди</h3>
-      <p>У 11 країнах ЄС діти з вищим ESCS стабільно частіше потрапляють у відбірні школи. У Грузії (1.5) відбір за успішністю не пояснює результат (6,95 бала, p = 0,21), там нерівність іде через сегрегацію за місцем проживання та плату за школу.</p>
-      <div class="tags"><span class="src">Звіт 11 країн</span><span class="src">1.5</span></div></div>
-    <div class="find"><h3>Україна: усі кажуть «нижня межа»</h3>
-      <p>Роботи 1.3 і 1.4 незалежно доходять висновку, що 62,2 бала — це оцінка знизу: через пропущені дані про батьків і через виключені області.</p>
+    <div class="find"><h3>One question, different theories</h3>
+      <p>Studies 1.1, 1.3, 1.5 and the 11-country report test Bourdieu’s idea and conflict theory: schools reproduce inequality. Study 1.2 looks from the functionalist side: effort and ambition may offset it. Study 1.4 is a research plan for four theories, with no results.</p>
+      <div class="tags"><span class="src">1.1</span><span class="src">1.2</span><span class="src">1.3</span><span class="src">1.4</span><span class="src">1.5</span><span class="src">11-country report</span></div></div>
+    <div class="find"><h3>School composition matters more than money</h3>
+      <p>Studies 1.1 and 1.5 independently reached the same point: school material resources barely explain differences. In 1.1 they add 1–4 percentage points to R². In Georgia (1.5) resource shortages are not linked to scores (r = −0.03). The 11-country report adds that the advantage of selective schools shrinks by 12–65 points after accounting for student and school status.</p>
+      <div class="tags"><span class="src">1.1</span><span class="src">1.5</span><span class="src">11-country report</span></div></div>
+    <div class="find"><h3>Selection doesn’t work everywhere</h3>
+      <p>In the 11 EU countries, children with higher ESCS consistently get into selective schools more often. In Georgia (1.5), selection by achievement does not explain the result (6.95 points, p = 0.21); there inequality runs through segregation by place of residence and school fees.</p>
+      <div class="tags"><span class="src">11-country report</span><span class="src">1.5</span></div></div>
+    <div class="find"><h3>Ukraine: everyone says “lower bound”</h3>
+      <p>Studies 1.3 and 1.4 independently conclude that 62.2 points is an underestimate: because of missing parent data and excluded regions.</p>
       <div class="tags"><span class="src">1.3</span><span class="src">1.4</span></div></div>
-    <div class="find"><h3>Амбіції: сильний зв'язок, але обережно</h3>
-      <p>Робота 1.2 знаходить 70 балів різниці (490 проти 420) між учнями з однаковою освітою батьків, що хочуть і не хочуть вищої освіти, і r = 0,32. Це більше, ніж увесь розрив Q4−Q1 в Україні (62), тож частина зв'язку, ймовірно, зворотна: сильніші учні мріють про більше.</p>
+    <div class="find"><h3>Ambition: a strong link, but be careful</h3>
+      <p>Study 1.2 finds a 70-point difference (490 vs 420) between students with the same parental education who do and do not want higher education, and r = 0.32. That is more than the entire Q4−Q1 gap in Ukraine (62), so part of the link is probably reverse: stronger students dream of more.</p>
       <div class="tags"><span class="src">1.2</span><span class="src">1.3</span></div></div>
-    <div class="find"><h3>Усі роботи чесні щодо меж</h3>
-      <p>У кожній роботі: PISA — це знімок у часі, тож лише зв'язки, не причини; тест 15-річних, а не НМТ; і для роботи 1.3 немає реплікаційних ваг, тому інтервали занадто вузькі.</p>
+    <div class="find"><h3>All the studies are honest about limits</h3>
+      <p>Every study notes: PISA is a snapshot in time, so only associations, not causes; it is a test of 15-year-olds, not the NMT (Ukraine’s national exam); and Study 1.3 has no replicate weights, so its intervals are too narrow.</p>
       <div class="tags"><span class="src">1.1</span><span class="src">1.3</span><span class="src">1.4</span><span class="src">1.5</span></div></div>
   </div>
 
   <div class="card" style="margin-top:22px">
-    <div class="cardhead"><h3>Де роботи не збігаються</h3></div>
+    <div class="cardhead"><h3>Where the studies disagree</h3></div>
     <ul class="plain">
-      <li><b>Україна і цикл.</b> Робота 1.1 каже, що України немає у файлі PISA 2025. Роботи 1.3 і 1.4 мають український файл із 7 105 учнів; 1.3 цикл не знає, 1.4 називає його PISA 2025 і додає 294 школи та 17 областей, чого з 1.3 перевірити не можна.</li>
-      <li><b>Грузія — інший рік.</b> Робота 1.5 використовує PISA 2022, решта — 2025.</li>
-      <li><b>Різні предмети.</b> Роботи 1.1 і 1.3 — математика, звіт про 11 країн і 1.2 — природничі науки.</li>
-      <li><b>«Стійкі» учні.</b> У роботі 1.1 це бідні учні, що досягли рівня 5+ (Естонія 4,2%, Чехія 2,5%, Польща 3,3%). У звіті про 11 країн інше означення: 11,7%, 10,4% і 12,1% для тих самих країн. Числа не порівнювати.</li>
-      <li><b>«Школа сильніша у 3–4 рази».</b> Так написано в підсумку 1.1, але за її ж таблицею це 3,1× для Чехії, 2,8× для Бразилії і 12× для Польщі (0,555 проти 0,045).</li>
+      <li><b>Ukraine and the cycle.</b> Study 1.1 says Ukraine is not in the PISA 2025 file. Studies 1.3 and 1.4 have a Ukrainian file of 7,105 students; 1.3 does not know the cycle, 1.4 calls it PISA 2025 and adds 294 schools and 17 regions, which cannot be checked against 1.3.</li>
+      <li><b>Georgia — a different year.</b> Study 1.5 uses PISA 2022, the rest use 2025.</li>
+      <li><b>Different subjects.</b> Studies 1.1 and 1.3 are math; the 11-country report and 1.2 are science.</li>
+      <li><b>“Resilient” students.</b> In Study 1.1 these are poor students who reached level 5+ (Estonia 4.2%, Czechia 2.5%, Poland 3.3%). The 11-country report uses a different definition: 11.7%, 10.4% and 12.1% for the same countries. The numbers are not comparable.</li>
+      <li><b>“School is 3–4 times stronger.”</b> That is what Study 1.1’s summary says, but by its own table it is 3.1× for Czechia, 2.8× for Brazil and 12× for Poland (0.555 vs 0.045).</li>
     </ul>
   </div>
 </section>
 
 <!-- sources -->
 <section id="sources">
-  <div class="sectionhead"><h2>Звідки дані</h2></div>
+  <div class="sectionhead"><h2>Where the data comes from</h2></div>
   <div class="card">
     <div class="tablewrap"><table>
-      <thead><tr><th>Робота</th><th>Про що</th><th>Країни</th><th>Цикл і предмет</th><th>Що береться на сайті</th></tr></thead>
+      <thead><tr><th>Study</th><th>About</th><th>Countries</th><th>Cycle and subject</th><th>What the site uses</th></tr></thead>
       <tbody>
-        <tr><td>1.1, Lynnyk Olha</td><td>Бурдьє, 4 країни, 80 реплікаційних ваг</td><td>Естонія, Чехія, Польща, Бразилія</td><td>PISA 2025, математика</td><td>Чверті ESCS, ICC, β власного і шкільного ESCS, три види капіталу, рівні 2 і 5</td></tr>
-        <tr><td>1.2, Polina Sakhno</td><td>Функціоналізм, амбіції учнів</td><td>—</td><td>PISA, природничі науки</td><td>Лише в тексті («Амбіції»)</td></tr>
-        <tr><td>1.3</td><td>Сім'я і математика в Україні</td><td>Україна, 7 105 учнів</td><td>Цикл не підтверджено, математика</td><td>Чверті ESCS, R², три види капіталу</td></tr>
-        <tr><td>1.4, Katya</td><td>План дослідження для України, чотири теорії</td><td>Україна</td><td>Без результатів</td><td>Ризики і межі даних</td></tr>
-        <tr><td>1.5</td><td>Школа і нерівність</td><td>Грузія</td><td>PISA 2022, математика і читання</td><td>R² на ладдері, відбір, ресурси</td></tr>
-        <tr><td>Звіт про 11 країн ЄС</td><td>Академічний відбір і відтворення нерівності</td><td>BGR, CZE, EST, HRV, HUN, LTU, LVA, POL, ROU, SVK, SVN</td><td>PISA 2025, наука</td><td>R², розрив Q4−Q1, відбірні школи</td></tr>
+        <tr><td>1.1, Lynnyk Olha</td><td>Bourdieu, 4 countries, 80 replicate weights</td><td>Estonia, Czechia, Poland, Brazil</td><td>PISA 2025, math</td><td>ESCS quarters, ICC, β of own and school ESCS, three kinds of capital, levels 2 and 5</td></tr>
+        <tr><td>1.2, Polina Sakhno</td><td>Functionalism, student ambition</td><td>—</td><td>PISA, science</td><td>Text only (“Ambition”)</td></tr>
+        <tr><td>1.3</td><td>Family and math in Ukraine</td><td>Ukraine, 7,105 students</td><td>Cycle not confirmed, math</td><td>ESCS quarters, R², three kinds of capital</td></tr>
+        <tr><td>1.4, Katya</td><td>Research plan for Ukraine, four theories</td><td>Ukraine</td><td>No results</td><td>Risks and data limits</td></tr>
+        <tr><td>1.5</td><td>School and inequality</td><td>Georgia</td><td>PISA 2022, math and reading</td><td>R² on the ladder, selection, resources</td></tr>
+        <tr><td>11-country EU report</td><td>Academic selection and reproduction of inequality</td><td>BGR, CZE, EST, HRV, HUN, LTU, LVA, POL, ROU, SVK, SVN</td><td>PISA 2025, science</td><td>R², Q4−Q1 gap, selective schools</td></tr>
       </tbody>
     </table></div>
   </div>
@@ -346,49 +346,49 @@ footer p{max-width:76ch}
 
 <footer>
   <div class="wrap">
-    <p>Усі числа взяті з перелічених вище робіт. Розклад розриву й симулятор — розрахунок цього сайту на їхніх коефіцієнтах. Жодна з робіт не доводить причинності: PISA — одномоментний зріз.</p>
-    <p>Навчальний проєкт, KSE. Код сторінки не залежить від зовнішніх бібліотек.</p>
+    <p>All numbers are taken from the studies listed above. The gap split and the simulator are this site’s own calculation on their coefficients. None of the studies proves causation: PISA is a one-time snapshot.</p>
+    <p>Student project, KSE. The page code does not depend on external libraries.</p>
   </div>
 </footer>
 <div id="tip" role="tooltip"></div>
 
 <script>
-/* ============ ДАНІ (усе з робіт, окрім позначених «розрахунок») ============ */
+/* ============ DATA (everything is from the studies, except where marked “calculation”) ============ */
 const C = {
-  UKR:{n:'Україна',src:'Робота 1.3',q:[402.7,428.3,448.0,464.9],gap:62.2,r2:7.6,r:.276,
+  UKR:{n:'Ukraine',src:'Study 1.3',q:[402.7,428.3,448.0,464.9],gap:62.2,r2:7.6,r:.276,
     cap:{h:[.157,.125,.189],p:[.177,.148,.207],o:[.042,.007,.076]}},
-  EST:{n:'Естонія',src:'Робота 1.1',q:[468,495,529,544],gap:75.8,d:.90,r2:11.4,l2:[29,8],res:4.17,top:13.55,iccE:24.2,own:.228,sch:.221,resD:3,
+  EST:{n:'Estonia',src:'Study 1.1',q:[468,495,529,544],gap:75.8,d:.90,r2:11.4,l2:[29,8],res:4.17,top:13.55,iccE:24.2,own:.228,sch:.221,resD:3,
     cap:{h:[.254,.015],p:[.147,.013],o:[.026,.016]}},
-  POL:{n:'Польща',src:'Робота 1.1',q:[448,473,505,529],gap:81.5,d:.93,r2:11.5,l2:[39,12],res:3.33,top:10.38,iccE:27.8,own:.045,sch:.555,resD:4,
+  POL:{n:'Poland',src:'Study 1.1',q:[448,473,505,529],gap:81.5,d:.93,r2:11.5,l2:[39,12],res:3.33,top:10.38,iccE:27.8,own:.045,sch:.555,resD:4,
     cap:{h:[.172,.020],p:[.220,.019],o:[.042,.018]}},
-  BRA:{n:'Бразилія',src:'Робота 1.1',q:[342,367,388,432],gap:90.4,d:1.21,r2:19.0,l2:[89,44],res:.02,top:.39,iccE:39.1,own:.160,sch:.441,resD:3,
+  BRA:{n:'Brazil',src:'Study 1.1',q:[342,367,388,432],gap:90.4,d:1.21,r2:19.0,l2:[89,44],res:.02,top:.39,iccE:39.1,own:.160,sch:.441,resD:3,
     cap:{h:[.150,.013],p:[.141,.012],o:[.267,.014]}},
-  CZE:{n:'Чехія',src:'Робота 1.1',q:[432,466,494,531],gap:99.4,d:1.10,r2:15.8,l2:[46,12],res:2.54,top:10.18,iccE:28.7,own:.150,sch:.463,resD:1,
+  CZE:{n:'Czechia',src:'Study 1.1',q:[432,466,494,531],gap:99.4,d:1.10,r2:15.8,l2:[46,12],res:2.54,top:10.18,iccE:28.7,own:.150,sch:.463,resD:1,
     cap:{h:[.211,.018],p:[.184,.016],o:[.096,.015]}}
 };
-/* Для 1.1 cap = [β, SE]; для України cap = [β, нижня межа CI, верхня межа CI] (CI з роботи 1.3, переведений зі шкали балів у β) */
+/* For Study 1.1 cap = [β, SE]; for Ukraine cap = [β, lower CI bound, upper CI bound] (CI from Study 1.3, converted from the points scale to β) */
 const ORDER_GAP=['UKR','EST','POL','BRA','CZE'];
-const CAPS=[{k:'h',n:'Професія батьків',code:'HISEI',c:'var(--cap1)'},{k:'p',n:'Освіта батьків',code:'PAREDINT',c:'var(--cap2)'},{k:'o',n:'Речі вдома',code:'HOMEPOS',c:'var(--cap3)'}];
+const CAPS=[{k:'h',n:'Parents’ occupation',code:'HISEI',c:'var(--cap1)'},{k:'p',n:'Parents’ education',code:'PAREDINT',c:'var(--cap2)'},{k:'o',n:'Possessions at home',code:'HOMEPOS',c:'var(--cap3)'}];
 const CAPTXT={
-  EST:'В Естонії професія батьків (β 0,25) важить більше, ніж освіта (0,15), а речі вдома статистично не відрізняються від нуля.',
-  CZE:'У Чехії професія й освіта батьків важать приблизно однаково (0,21 і 0,18), речі вдома слабше (0,10).',
-  POL:'У Польщі освіта батьків (0,22) важить більше, ніж професія (0,17); речі вдома майже не мають ваги (0,04).',
-  BRA:'Бразилія — єдина країна, де найсильніше працюють речі вдома (0,27). Це майже вдвічі більше за освіту (0,14) і професію (0,15) батьків.',
-  UKR:'В Україні освіта (0,18) і професія (0,16) батьків важать порівнянно, речі вдома мало (0,04). Це інша модель (із контролем на стать), інтервали занадто вузькі: у роботі 1.3 немає реплікаційних ваг.'
+  EST:'In Estonia, parents’ occupation (β 0.25) matters more than education (0.15), and possessions at home are statistically indistinguishable from zero.',
+  CZE:'In Czechia, parents’ occupation and education matter about equally (0.21 and 0.18), and possessions at home less (0.10).',
+  POL:'In Poland, parents’ education (0.22) matters more than occupation (0.17); possessions at home carry almost no weight (0.04).',
+  BRA:'Brazil is the only country where possessions at home matter most (0.27). That is almost twice as much as parents’ education (0.14) and occupation (0.15).',
+  UKR:'In Ukraine, parents’ education (0.18) and occupation (0.16) matter about the same, and possessions at home little (0.04). This is a different model (controlling for gender), and the intervals are too narrow: Study 1.3 has no replicate weights.'
 };
 const CROSS=[
-  {n:'Естонія',m:75.8,s:68,rm:11.4,rs:9.6},{n:'Чехія',m:99.4,s:96,rm:15.8,rs:15.0},{n:'Польща',m:81.5,s:82,rm:11.5,rs:11.3}
+  {n:'Estonia',m:75.8,s:68,rm:11.4,rs:9.6},{n:'Czechia',m:99.4,s:96,rm:15.8,rs:15.0},{n:'Poland',m:81.5,s:82,rm:11.5,rs:11.3}
 ];
-/* Ладдер: R² (частка дисперсії, пояснена ESCS), % */
+/* Ladder: R² (share of variance explained by ESCS), % */
 const LAD=[
- {n:'Латвія',sci:5.5},{n:'Литва',sci:7.9},{n:'Словенія',sci:8.5},{n:'Естонія',sci:9.6,mat:11.4},{n:'Польща',sci:11.3,mat:11.5},
- {n:'Хорватія',sci:11.9},{n:'Болгарія',sci:13.8},{n:'Чехія',sci:15.0,mat:15.8},{n:'Угорщина',sci:17.9},{n:'Словаччина',sci:20.7},{n:'Румунія',sci:21.7},
- {n:'Україна',mat:7.6,hl:true,k:'UKR'},{n:'Бразилія',mat:19.0},{n:'Грузія',geo:8.8}
+ {n:'Latvia',sci:5.5},{n:'Lithuania',sci:7.9},{n:'Slovenia',sci:8.5},{n:'Estonia',sci:9.6,mat:11.4},{n:'Poland',sci:11.3,mat:11.5},
+ {n:'Croatia',sci:11.9},{n:'Bulgaria',sci:13.8},{n:'Czechia',sci:15.0,mat:15.8},{n:'Hungary',sci:17.9},{n:'Slovakia',sci:20.7},{n:'Romania',sci:21.7},
+ {n:'Ukraine',mat:7.6,hl:true,k:'UKR'},{n:'Brazil',mat:19.0},{n:'Georgia',geo:8.8}
 ].map(o=>({...o,key:o.sci??o.mat??o.geo})).sort((a,b)=>a.key-b.key);
 
-/* ============ утиліти ============ */
-const f=(v,d=1)=>Number(v).toLocaleString('uk-UA',{minimumFractionDigits:d,maximumFractionDigits:d});
-const Z=1.271; // середнє нижньої чверті N(0,1)
+/* ============ utilities ============ */
+const f=(v,d=1)=>Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+const Z=1.271; // mean of the bottom quarter of N(0,1)
 const state={c:'EST'};
 const $=id=>document.getElementById(id);
 const mounts=[];
@@ -401,7 +401,7 @@ function anat(k){
 const svg=(w,h,inner,label)=>`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" role="img" aria-label="${label}">${inner}</svg>`;
 const tip=(s)=>`data-tip="${s.replace(/"/g,'&quot;')}"`;
 
-/* ============ вибір країни ============ */
+/* ============ country picker ============ */
 function renderPills(){
   $('pills').innerHTML=ORDER_GAP.slice().sort((a,b)=>['UKR','EST','CZE','POL','BRA'].indexOf(a)-['UKR','EST','CZE','POL','BRA'].indexOf(b)).map(c=>`<button class="pill" role="radio" aria-checked="${c===state.c}" data-c="${c}">${C[c].n}</button>`).join('');
 }
@@ -409,7 +409,7 @@ function setC(c){state.c=c;renderAll()}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(b)setC(b.dataset.c)});
 document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('svg [data-c]')){e.preventDefault();setC(e.target.dataset.c)}});
 
-/* ============ 1. героїчний графік ============ */
+/* ============ 1. hero chart ============ */
 function heroChart(el,w){
   const narrow=w<520, left=narrow?70:128, right=narrow?46:78, top=30, rowH=56, h=top+rowH*5+6;
   const x=v=>left+(v-320)/(560-320)*(w-left-right);
@@ -417,65 +417,65 @@ function heroChart(el,w){
   [350,400,450,500,550].forEach(t=>{s+=`<line x1="${x(t)}" x2="${x(t)}" y1="${top-6}" y2="${h-4}" stroke="var(--rule)"/><text x="${x(t)}" y="14" text-anchor="middle" class="mut">${t}</text>`});
   ORDER_GAP.forEach((c,i)=>{
     const k=C[c], y=top+rowH*i+rowH/2, sel=c===state.c;
-    let g=`<g class="row-hit ${sel?'row-sel':''}" data-c="${c}" tabindex="0" role="button" aria-label="${k.n}: розрив ${f(k.gap)} бала. Вибрати країну" aria-pressed="${sel}">`;
+    let g=`<g class="row-hit ${sel?'row-sel':''}" data-c="${c}" tabindex="0" role="button" aria-label="${k.n}: gap ${f(k.gap)} points. Select country" aria-pressed="${sel}">`;
     g+=`<rect class="rowbg" x="0" y="${y-rowH/2+3}" width="${w}" height="${rowH-6}" rx="8" fill="transparent"/>`;
     g+=`<text x="${narrow?6:10}" y="${y+4}" class="${sel?'strong':''}" style="font-size:${narrow?12:14}px">${k.n}</text>`;
     if(!narrow)g+=`<text x="10" y="${y+19}" class="mut" style="font-size:11px">${k.src}</text>`;
     g+=`<line x1="${x(k.q[0])}" x2="${x(k.q[3])}" y1="${y}" y2="${y}" stroke="var(--rule2)" stroke-width="3" stroke-linecap="round"/>`;
-    k.q.forEach((v,j)=>{g+=`<circle cx="${x(v)}" cy="${y}" r="${narrow?7:9}" style="fill:var(--q${j+1})" stroke="var(--ink2)" stroke-width="1" ${tip(`${k.n} · Q${j+1}: ${f(v)} бала`)}/>`});
+    k.q.forEach((v,j)=>{g+=`<circle cx="${x(v)}" cy="${y}" r="${narrow?7:9}" style="fill:var(--q${j+1})" stroke="var(--ink2)" stroke-width="1" ${tip(`${k.n} · Q${j+1}: ${f(v)} points`)}/>`});
     g+=`<text x="${x(k.q[0])}" y="${y-15}" text-anchor="middle" style="font-size:11px">${f(k.q[0],0)}</text>`;
     g+=`<text x="${x(k.q[3])}" y="${y-15}" text-anchor="middle" style="font-size:11px">${f(k.q[3],0)}</text>`;
     g+=`<text x="${w-right+10}" y="${y+4}" class="strong" style="font-size:${narrow?12:14}px">Δ ${f(k.gap)}</text></g>`;
     s+=g;
   });
-  el.innerHTML=svg(w,h,s,'Середній бал з математики за чвертями статусу сім\'ї для п\'яти країн');
+  el.innerHTML=svg(w,h,s,'Average math score by family-status quarter for five countries');
 }
 function heroTable(){
-  $('hero-table').innerHTML=`<table><thead><tr><th>Країна</th><th class="n">Q1</th><th class="n">Q2</th><th class="n">Q3</th><th class="n">Q4</th><th class="n">Розрив Q4−Q1</th><th>Джерело</th></tr></thead><tbody>${ORDER_GAP.map(c=>{const k=C[c];return `<tr><td>${k.n}</td>${k.q.map(v=>`<td class="n">${f(v)}</td>`).join('')}<td class="n">${f(k.gap)}</td><td>${k.src}</td></tr>`}).join('')}</tbody></table>`;
+  $('hero-table').innerHTML=`<table><thead><tr><th>Country</th><th class="n">Q1</th><th class="n">Q2</th><th class="n">Q3</th><th class="n">Q4</th><th class="n">Q4−Q1 gap</th><th>Source</th></tr></thead><tbody>${ORDER_GAP.map(c=>{const k=C[c];return `<tr><td>${k.n}</td>${k.q.map(v=>`<td class="n">${f(v)}</td>`).join('')}<td class="n">${f(k.gap)}</td><td>${k.src}</td></tr>`}).join('')}</tbody></table>`;
 }
 function renderKpis(){
   const k=C[state.c], t=[];
-  t.push(`<div class="kpi"><div class="v">${f(k.gap)} <small>бала</small></div><div class="l">Розрив Q4−Q1, математика</div><div class="d">${k.src}${k.d?`. Це ${f(k.d,2)} стандартного відхилення — великий ефект`:''}</div></div>`);
-  t.push(`<div class="kpi"><div class="v">${f(k.r2)}<small>%</small></div><div class="l">Відмінностей у балах пояснює ESCS</div><div class="d">R² простої регресії; решта 100% — інші чинники.</div></div>`);
+  t.push(`<div class="kpi"><div class="v">${f(k.gap)} <small>points</small></div><div class="l">Q4−Q1 gap, math</div><div class="d">${k.src}${k.d?`. That is ${f(k.d,2)} standard deviations — a large effect`:''}</div></div>`);
+  t.push(`<div class="kpi"><div class="v">${f(k.r2)}<small>%</small></div><div class="l">Score variation explained by ESCS</div><div class="d">R² of a simple regression; the other 100% is other factors.</div></div>`);
   if(k.l2){
-    t.push(`<div class="kpi"><div class="v">${k.l2[0]}%<small> проти ${k.l2[1]}%</small></div><div class="l">Нижче базового рівня 2 (Q1 проти Q4)</div><div class="d">Рівень 2 — мінімальна математична грамотність. Робота 1.1.</div></div>`);
-    t.push(`<div class="kpi"><div class="v">${f(k.res,k.res<1?2:1)}<small>%</small></div><div class="l">Учнів Q1 досягли рівня 5+</div><div class="d">Рівень 5+ — найвищі результати. Означення з роботи 1.1, у звіті про 11 країн «стійкість» визначено інакше.</div></div>`);
+    t.push(`<div class="kpi"><div class="v">${k.l2[0]}%<small> vs ${k.l2[1]}%</small></div><div class="l">Below baseline level 2 (Q1 vs Q4)</div><div class="d">Level 2 is minimum math proficiency. Study 1.1.</div></div>`);
+    t.push(`<div class="kpi"><div class="v">${f(k.res,k.res<1?2:1)}<small>%</small></div><div class="l">Of Q1 students reached level 5+</div><div class="d">Level 5+ is the top performance. Definition from Study 1.1; the 11-country report defines “resilience” differently.</div></div>`);
   }else{
-    t.push(`<div class="kpi"><div class="v">—</div><div class="l">Рівні 2 і 5+</div><div class="d">Робота 1.3 їх не рахує.</div></div>`);
+    t.push(`<div class="kpi"><div class="v">—</div><div class="l">Levels 2 and 5+</div><div class="d">Study 1.3 does not calculate them.</div></div>`);
   }
   $('kpis').innerHTML=t.join('');
   $('gap-note').innerHTML=state.c==='UKR'
-    ?`<p><strong>Україна: це нижня межа.</strong> Оцінки з роботи 1.3 без реплікаційних ваг і без учнів, чиї дані про батьків відсутні. Див. блок «Де на цій шкалі Україна».</p>`
-    :`<p><strong>Як читати ${k.n}.</strong> Бал Q4 вищий за Q1 на ${f(k.gap)}. Що саме за цим стоїть — сім'я чи школа, дивись нижче.</p>`;
+    ?`<p><strong>Ukraine: this is a lower bound.</strong> The estimates from Study 1.3 have no replicate weights and exclude students with missing parent data. See the block “Where Ukraine sits on this scale”.</p>`
+    :`<p><strong>How to read ${k.n}.</strong> The Q4 score is ${f(k.gap)} points higher than Q1. What lies behind that — family or school — see below.</p>`;
 }
 function renderCross(){
-  $('cross').innerHTML=`<thead><tr><th>Країна</th><th class="n">Розрив, математика<br><small>Робота 1.1</small></th><th class="n">Розрив, наука<br><small>Звіт 11 країн</small></th><th class="n">R², математика<br><small>Робота 1.1</small></th><th class="n">R², наука<br><small>Звіт 11 країн</small></th></tr></thead><tbody>${CROSS.map(r=>`<tr><td>${r.n}</td><td class="n">${f(r.m)}</td><td class="n">${f(r.s,0)}</td><td class="n">${f(r.rm)}%</td><td class="n">${f(r.rs)}%</td></tr>`).join('')}</tbody>`;
+  $('cross').innerHTML=`<thead><tr><th>Country</th><th class="n">Gap, math<br><small>Study 1.1</small></th><th class="n">Gap, science<br><small>11-country report</small></th><th class="n">R², math<br><small>Study 1.1</small></th><th class="n">R², science<br><small>11-country report</small></th></tr></thead><tbody>${CROSS.map(r=>`<tr><td>${r.n}</td><td class="n">${f(r.m)}</td><td class="n">${f(r.s,0)}</td><td class="n">${f(r.rm)}%</td><td class="n">${f(r.rs)}%</td></tr>`).join('')}</tbody>`;
 }
 
-/* ============ 2. анатомія розриву ============ */
+/* ============ 2. anatomy of the gap ============ */
 function anatChart(el,w){
-  const ids=['EST','CZE','BRA','POL']; // за зростанням частки школи
+  const ids=['EST','CZE','BRA','POL']; // by increasing school share
   const narrow=w<520, left=narrow?62:96, right=narrow?50:70, rowH=52, h=rowH*4+10, max=105;
   const x=v=>(v/max)*(w-left-right);
   let s='';
   ids.forEach((c,i)=>{
     const k=C[c], a=anat(k), y=6+i*rowH, sel=c===state.c, by=y+12, bh=24;
-    s+=`<g class="row-hit ${sel?'row-sel':''}" data-c="${c}" tabindex="0" role="button" aria-label="${k.n}: розрив ${f(k.gap)}, з них школа ${f(a.sch,0)}, родина ${f(a.own,0)}" aria-pressed="${sel}">`;
+    s+=`<g class="row-hit ${sel?'row-sel':''}" data-c="${c}" tabindex="0" role="button" aria-label="${k.n}: gap ${f(k.gap)}, of which school ${f(a.sch,0)}, family ${f(a.own,0)}" aria-pressed="${sel}">`;
     s+=`<rect class="rowbg" x="0" y="${y}" width="${w}" height="${rowH-4}" rx="8" fill="transparent"/>`;
     s+=`<text x="${narrow?4:10}" y="${by+16}" class="${sel?'strong':''}" style="font-size:${narrow?12:14}px">${k.n}</text>`;
-    let cx=left; const segs=[['own',a.own,'Власний статус сім\'ї','var(--own)'],['school',a.sch,'Школа (склад учнів)','var(--school)'],['rest',a.rest,'Не пояснено моделлю','var(--rest)']];
+    let cx=left; const segs=[['own',a.own,'Family’s own status','var(--own)'],['school',a.sch,'School (student mix)','var(--school)'],['rest',a.rest,'Not explained by the model','var(--rest)']];
     segs.forEach(([id,v,name,col])=>{
       const wv=Math.max(x(v)-2,1);
-      s+=`<rect x="${cx}" y="${by}" width="${wv}" height="${bh}" rx="3" style="fill:${col}" ${tip(`${k.n} · ${name}: ${f(v)} бала (${f(v/k.gap*100,0)}% розриву)`)}/>`;
+      s+=`<rect x="${cx}" y="${by}" width="${wv}" height="${bh}" rx="3" style="fill:${col}" ${tip(`${k.n} · ${name}: ${f(v)} points (${f(v/k.gap*100,0)}% of the gap)`)}/>`;
       if(wv>34)s+=`<text x="${cx+wv/2}" y="${by+16}" text-anchor="middle" style="fill:${id==='rest'?'var(--ink)':'#fff'};font-size:12px;font-weight:600">${f(v,0)}</text>`;
       cx+=x(v);
     });
     s+=`<text x="${w-right+10}" y="${by+16}" class="strong" style="font-size:${narrow?12:14}px">Δ ${f(k.gap)}</text></g>`;
   });
-  el.innerHTML=svg(w,h,s,'Розклад розриву Q4−Q1 на власний статус сім\'ї, школу та залишок для чотирьох країн');
+  el.innerHTML=svg(w,h,s,'Q4−Q1 gap split into the family’s own status, school and remainder for four countries');
 }
 
-/* ============ 3. симулятор ============ */
+/* ============ 3. simulator ============ */
 function simChart(el,w){
   const k=C[state.c], a=anat(k), narrow=w<520;
   if(!a){el.innerHTML='';return}
@@ -486,32 +486,32 @@ function simChart(el,w){
   let s='';
   [350,400,450,500,550].forEach(t=>{s+=`<line x1="${x(t)}" x2="${x(t)}" y1="30" y2="150" stroke="var(--rule)"/><text x="${x(t)}" y="168" text-anchor="middle" class="mut">${t}</text>`});
   const y1=70,y2=120;
-  // до
-  s+=`<text x="${left}" y="${y1-24}" style="font-size:12px">Зараз</text><line x1="${x(k.q[0])}" x2="${x(k.q[3])}" y1="${y1}" y2="${y1}" stroke="var(--rule2)" stroke-width="3" stroke-linecap="round"/>`;
-  s+=`<circle cx="${x(k.q[0])}" cy="${y1}" r="9" style="fill:var(--q1)" stroke="var(--ink2)" ${tip(`Q1 зараз: ${f(k.q[0])}`)}/><circle cx="${x(k.q[3])}" cy="${y1}" r="9" style="fill:var(--q4)" stroke="var(--ink2)" ${tip(`Q4 зараз: ${f(k.q[3])}`)}/>`;
+  // before
+  s+=`<text x="${left}" y="${y1-24}" style="font-size:12px">Now</text><line x1="${x(k.q[0])}" x2="${x(k.q[3])}" y1="${y1}" y2="${y1}" stroke="var(--rule2)" stroke-width="3" stroke-linecap="round"/>`;
+  s+=`<circle cx="${x(k.q[0])}" cy="${y1}" r="9" style="fill:var(--q1)" stroke="var(--ink2)" ${tip(`Q1 now: ${f(k.q[0])}`)}/><circle cx="${x(k.q[3])}" cy="${y1}" r="9" style="fill:var(--q4)" stroke="var(--ink2)" ${tip(`Q4 now: ${f(k.q[3])}`)}/>`;
   s+=`<text x="${x(k.q[0])}" y="${y1+26}" text-anchor="middle">${f(k.q[0],0)}</text><text x="${x(k.q[3])}" y="${y1+26}" text-anchor="middle">${f(k.q[3],0)}</text>`;
-  // після
-  s+=`<text x="${left}" y="${y2-24}" style="font-size:12px">Після змін</text><line x1="${x(q1a)}" x2="${x(q4a)}" y1="${y2}" y2="${y2}" stroke="var(--brand)" stroke-width="3" stroke-linecap="round"/>`;
-  s+=`<circle cx="${x(q1a)}" cy="${y2}" r="9" style="fill:var(--q1)" stroke="var(--ink)" stroke-width="2" ${tip(`Q1 після: ${f(q1a)}`)}/><circle cx="${x(q4a)}" cy="${y2}" r="9" style="fill:var(--q4)" stroke="var(--ink)" stroke-width="2" ${tip(`Q4 після: ${f(q4a)}`)}/>`;
+  // after
+  s+=`<text x="${left}" y="${y2-24}" style="font-size:12px">After changes</text><line x1="${x(q1a)}" x2="${x(q4a)}" y1="${y2}" y2="${y2}" stroke="var(--brand)" stroke-width="3" stroke-linecap="round"/>`;
+  s+=`<circle cx="${x(q1a)}" cy="${y2}" r="9" style="fill:var(--q1)" stroke="var(--ink)" stroke-width="2" ${tip(`Q1 after: ${f(q1a)}`)}/><circle cx="${x(q4a)}" cy="${y2}" r="9" style="fill:var(--q4)" stroke="var(--ink)" stroke-width="2" ${tip(`Q4 after: ${f(q4a)}`)}/>`;
   s+=`<text x="${x(q1a)}" y="${y2+26}" text-anchor="middle" class="strong">${f(q1a,0)}</text><text x="${x(q4a)}" y="${y2+26}" text-anchor="middle" class="strong">${f(q4a,0)}</text>`;
-  el.innerHTML=svg(w,h,s,'Положення Q1 і Q4 до і після змін');
-  $('simres').innerHTML=`Розрив ${f(k.gap)} → ${f(gapA)} <small>бала, закрито ${f(red/k.gap*100,0)}%</small>`;
+  el.innerHTML=svg(w,h,s,'Position of Q1 and Q4 before and after the changes');
+  $('simres').innerHTML=`Gap ${f(k.gap)} → ${f(gapA)} <small>points, ${f(red/k.gap*100,0)}% closed</small>`;
 }
 function renderSim(){
   const k=C[state.c], a=anat(k), off=!a;
   ['sd','sr'].forEach(i=>$(i).disabled=off);
   $('sdv').textContent=$('sd').value+'%'; $('srv').textContent=$('sr').value+'%';
   if(off){
-    $('simres').innerHTML='Для України симулятор недоступний';
-    $('sim-warn').innerHTML=`<div class="note"><p>У файлі роботи 1.3 немає номерів шкіл, тож розділити вплив сім'ї і школи неможливо. Обери Естонію, Чехію, Польщу або Бразилію.</p></div>`;
+    $('simres').innerHTML='The simulator is not available for Ukraine';
+    $('sim-warn').innerHTML=`<div class="note"><p>The Study 1.3 file has no school IDs, so the effect of family and school cannot be separated. Choose Estonia, Czechia, Poland or Brazil.</p></div>`;
     $('sim-chart').innerHTML='';
   }else{
-    $('sim-warn').innerHTML=`<div class="note"><p><strong>Обережно.</strong> ${k.n}: школа пояснює ${f(a.sch/k.gap*100,0)}% розриву, ресурси — не більше ${f(k.resD,0)} в.п. від цієї частини. Це оцінка зв'язку з роботи 1.1; якщо він не причинний, реальний ефект буде меншим. Змішування учнів також змінює Q4: він трохи втрачає, Q1 набирає.</p></div>`;
+    $('sim-warn').innerHTML=`<div class="note"><p><strong>Careful.</strong> ${k.n}: school explains ${f(a.sch/k.gap*100,0)}% of the gap, and resources no more than ${f(k.resD,0)} percentage points of that part. This is an estimate of the association from Study 1.1; if it is not causal, the real effect will be smaller. Mixing students also changes Q4: it loses a little, Q1 gains.</p></div>`;
     simChart($('sim-chart'),$('sim-chart').clientWidth||600);
   }
 }
 
-/* ============ 4. капітал ============ */
+/* ============ 4. capital ============ */
 function capCard(c){
   const k=C[c], w=220, rh=40;
   let s='';
@@ -519,9 +519,9 @@ function capCard(c){
     const d=k.cap[p.k]; const b=d[0]; const lo=c==='UKR'?d[1]:b-1.96*d[1], hi=c==='UKR'?d[2]:b+1.96*d[1];
     const sx=v=>Math.max(0,v)/.36*150, y=10+i*rh, ns=lo<=0&&hi>=0;
     s+=`<text x="0" y="${y+9}" style="font-size:11px">${p.n}</text>`;
-    s+=`<rect x="0" y="${y+15}" width="${Math.max(sx(b),1)}" height="9" rx="4.5" style="fill:${p.c}" ${tip(`${k.n} · ${p.n} (${p.code}): β = ${f(b,3)}, 95% ІД [${f(lo,3)}; ${f(hi,3)}]`)}/>`;
+    s+=`<rect x="0" y="${y+15}" width="${Math.max(sx(b),1)}" height="9" rx="4.5" style="fill:${p.c}" ${tip(`${k.n} · ${p.n} (${p.code}): β = ${f(b,3)}, 95% CI [${f(lo,3)}; ${f(hi,3)}]`)}/>`;
     s+=`<line x1="${sx(lo)}" x2="${sx(hi)}" y1="${y+19.5}" y2="${y+19.5}" stroke="var(--ink)" stroke-width="1.5"/>`;
-    s+=`<text x="${sx(hi)+6}" y="${y+23}" class="strong" style="font-size:11px">${f(b,2)}${ns?' н/з':''}</text>`;
+    s+=`<text x="${sx(hi)+6}" y="${y+23}" class="strong" style="font-size:11px">${f(b,2)}${ns?' n.s.':''}</text>`;
   });
   return `<button type="button" class="cap" data-c="${c}" aria-pressed="${c===state.c}" aria-label="${k.n}: ${CAPS.map(p=>p.n+' '+f(k.cap[p.k][0],2)).join(', ')}"><b>${k.n}</b>${svg(w,rh*3+4,s,'')}</button>`;
 }
@@ -529,10 +529,10 @@ function renderCaps(){
   const order=['EST','CZE','POL','BRA','UKR'];
   $('caps').innerHTML=order.map(capCard).join('');
   $('cap-note').innerHTML=`<p><strong>${C[state.c].n}.</strong> ${CAPTXT[state.c]}</p>`;
-  $('cap-table').innerHTML=`<table><thead><tr><th>Країна</th>${CAPS.map(p=>`<th class="n">${p.n}</th>`).join('')}<th>Джерело</th></tr></thead><tbody>${order.map(c=>`<tr><td>${C[c].n}</td>${CAPS.map(p=>`<td class="n">${f(C[c].cap[p.k][0],3)}</td>`).join('')}<td>${C[c].src}</td></tr>`).join('')}</tbody></table>`;
+  $('cap-table').innerHTML=`<table><thead><tr><th>Country</th>${CAPS.map(p=>`<th class="n">${p.n}</th>`).join('')}<th>Source</th></tr></thead><tbody>${order.map(c=>`<tr><td>${C[c].n}</td>${CAPS.map(p=>`<td class="n">${f(C[c].cap[p.k][0],3)}</td>`).join('')}<td>${C[c].src}</td></tr>`).join('')}</tbody></table>`;
 }
 
-/* ============ 5. ладдер ============ */
+/* ============ 5. ladder ============ */
 function ladder(el,w){
   const narrow=w<520, left=narrow?84:116, right=34, rowH=30, top=26, h=top+rowH*LAD.length+8, max=24;
   const x=v=>left+(v/max)*(w-left-right);
@@ -544,24 +544,24 @@ function ladder(el,w){
     s+=`<text x="${narrow?8:12}" y="${y+4}" class="${o.hl?'strong':''}" style="font-size:${narrow?12:13}px">${o.n}</text>`;
     const vals=[o.sci,o.mat,o.geo].filter(v=>v!=null);
     if(vals.length>1)s+=`<line x1="${x(Math.min(...vals))}" x2="${x(Math.max(...vals))}" y1="${y}" y2="${y}" stroke="var(--rule2)" stroke-width="2"/>`;
-    if(o.sci!=null)s+=`<circle cx="${x(o.sci)}" cy="${y}" r="6" style="fill:var(--own)" stroke="var(--surface)" stroke-width="2" ${tip(`${o.n} · наука, PISA 2025: R² = ${f(o.sci)}%`)}/>`;
-    if(o.mat!=null)s+=`<path d="M${x(o.mat)} ${y-7}l7 7-7 7-7-7z" style="fill:var(--school)" stroke="var(--surface)" stroke-width="2" ${tip(`${o.n} · математика: R² = ${f(o.mat)}%`)}/>`;
-    if(o.geo!=null)s+=`<rect x="${x(o.geo)-6}" y="${y-6}" width="12" height="12" fill="var(--surface)" stroke="var(--ink2)" stroke-width="2" ${tip(`${o.n} · математика, PISA 2022: R² = ${f(o.geo)}%`)}/>`;
-    if(o.hl||o.n==='Грузія'||o.n==='Румунія'||o.n==='Латвія'||o.n==='Бразилія'){const mx=Math.max(...vals);s+=`<text x="${x(mx)+12}" y="${y+4}" class="${o.hl?'strong':''}" style="font-size:12px">${f(mx)}%</text>`}
+    if(o.sci!=null)s+=`<circle cx="${x(o.sci)}" cy="${y}" r="6" style="fill:var(--own)" stroke="var(--surface)" stroke-width="2" ${tip(`${o.n} · science, PISA 2025: R² = ${f(o.sci)}%`)}/>`;
+    if(o.mat!=null)s+=`<path d="M${x(o.mat)} ${y-7}l7 7-7 7-7-7z" style="fill:var(--school)" stroke="var(--surface)" stroke-width="2" ${tip(`${o.n} · math: R² = ${f(o.mat)}%`)}/>`;
+    if(o.geo!=null)s+=`<rect x="${x(o.geo)-6}" y="${y-6}" width="12" height="12" fill="var(--surface)" stroke="var(--ink2)" stroke-width="2" ${tip(`${o.n} · math, PISA 2022: R² = ${f(o.geo)}%`)}/>`;
+    if(o.hl||o.n==='Georgia'||o.n==='Romania'||o.n==='Latvia'||o.n==='Brazil'){const mx=Math.max(...vals);s+=`<text x="${x(mx)+12}" y="${y+4}" class="${o.hl?'strong':''}" style="font-size:12px">${f(mx)}%</text>`}
   });
-  el.innerHTML=svg(w,h,s,'Частка відмінностей у балах, пояснена статусом сім\'ї, для 14 країн');
+  el.innerHTML=svg(w,h,s,'Share of score differences explained by family status, for 14 countries');
 }
 function ladderTable(){
-  $('ladder-table').innerHTML=`<table><thead><tr><th>Країна</th><th class="n">Наука, 2025</th><th class="n">Математика</th><th>Джерело</th></tr></thead><tbody>${LAD.map(o=>`<tr><td>${o.n}${o.geo!=null?' (PISA 2022)':''}</td><td class="n">${o.sci!=null?f(o.sci)+'%':'—'}</td><td class="n">${(o.mat??o.geo)!=null?f(o.mat??o.geo)+'%':'—'}</td><td>${o.sci!=null?'Звіт 11 країн':''}${o.sci!=null&&o.mat!=null?'; ':''}${o.mat!=null?(o.n==='Україна'?'Робота 1.3':'Робота 1.1'):''}${o.geo!=null?'Робота 1.5':''}</td></tr>`).join('')}</tbody></table>`;
+  $('ladder-table').innerHTML=`<table><thead><tr><th>Country</th><th class="n">Science, 2025</th><th class="n">Math</th><th>Source</th></tr></thead><tbody>${LAD.map(o=>`<tr><td>${o.n}${o.geo!=null?' (PISA 2022)':''}</td><td class="n">${o.sci!=null?f(o.sci)+'%':'—'}</td><td class="n">${(o.mat??o.geo)!=null?f(o.mat??o.geo)+'%':'—'}</td><td>${o.sci!=null?'11-country report':''}${o.sci!=null&&o.mat!=null?'; ':''}${o.mat!=null?(o.n==='Ukraine'?'Study 1.3':'Study 1.1'):''}${o.geo!=null?'Study 1.5':''}</td></tr>`).join('')}</tbody></table>`;
 }
 
-/* ============ підказки ============ */
+/* ============ tooltips ============ */
 const tipEl=$('tip');
 function showTip(t,x,y){tipEl.textContent=t;tipEl.style.opacity=1;const r=tipEl.getBoundingClientRect();tipEl.style.left=Math.min(x+14,innerWidth-r.width-8)+'px';tipEl.style.top=(y+16>innerHeight-r.height?y-r.height-12:y+16)+'px'}
 document.addEventListener('mousemove',e=>{const t=e.target.closest&&e.target.closest('[data-tip]');if(t)showTip(t.dataset.tip,e.clientX,e.clientY);else tipEl.style.opacity=0});
 document.addEventListener('mouseleave',()=>tipEl.style.opacity=0);
 
-/* ============ запуск ============ */
+/* ============ launch ============ */
 function renderAll(){
   renderPills();renderKpis();renderCaps();
   mounts.forEach(m=>m.fn(m.el,m.el.clientWidth||600));
