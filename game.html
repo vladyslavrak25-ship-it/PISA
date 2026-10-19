@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Kind of School Would You Attend?</title>
+<style>
+  :root {
+    --bg: #f6f5f2; --card: #ffffff; --text: #1d1d1b; --muted: #6b6a66;
+    --accent: #2d5a8a; --accent-2: #c9a24a; --line: #e2dfd8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161718; --card: #1f2022; --text: #ececea; --muted: #9b9a95;
+      --accent: #7fa8d6; --accent-2: #d9b962; --line: #33343a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161718; --card: #1f2022; --text: #ececea; --muted: #9b9a95;
+    --accent: #7fa8d6; --accent-2: #d9b962; --line: #33343a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5; min-height: 100vh;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px; margin-bottom: 16px;
+  }
+  .progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+  .progress > div { height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+  .round-label { color: var(--muted); font-size: 0.85rem; margin-bottom: 6px; }
+  .question { font-size: 1.1rem; font-weight: 600; margin: 0 0 14px; }
+  .options { display: grid; gap: 12px; }
+  button.opt {
+    text-align: left; font: inherit; color: var(--text); background: var(--card);
+    border: 2px solid var(--line); border-radius: 12px; padding: 14px 16px; cursor: pointer;
+    transition: border-color .15s, transform .05s;
+  }
+  button.opt:hover { border-color: var(--accent); }
+  button.opt:active { transform: scale(0.99); }
+  button.opt:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+  .btn {
+    font: inherit; color: #fff; background: var(--accent); border: 0; border-radius: 10px;
+    padding: 10px 18px; cursor: pointer;
+  }
+  .btn.ghost { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+  .stat-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 12px 0; }
+  .stat { border-left: 4px solid var(--accent-2); padding: 6px 12px; background: var(--bg); border-radius: 8px; }
+  .stat b { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  .stat span { font-size: 1.05rem; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-top: 14px; }
+  .hidden { display: none !important; }
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  @media (max-width: 360px) { main { padding: 16px 12px 40px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>What Kind of School Would You Attend?</h1>
+  <p class="sub">Answer 20 questions. In each round, choose the option that sounds more like you. At the end, see what kind of family background and school environment your choices suggest.</p>
+
+  <section id="game" class="card">
+    <div class="progress"><div id="bar"></div></div>
+    <div class="round-label" id="roundLabel"></div>
+    <p class="question" id="question"></p>
+    <div class="options" id="options"></div>
+  </section>
+
+  <section id="result" class="card hidden">
+    <h2 style="margin:0 0 4px; font-size:1.3rem;">Your Result</h2>
+    <p class="sub" style="margin-bottom:8px;">This game is an illustration, not a prediction about any individual.</p>
+    <div class="stat-row">
+      <div class="stat"><b>Family Background</b><span id="rFamily"></span></div>
+      <div class="stat"><b>School Segregation Level</b><span id="rSeg"></span></div>
+      <div class="stat"><b>The School You Might Attend</b><span id="rSchool"></span></div>
+    </div>
+    <p id="rText"></p>
+    <p class="note" id="rNote"></p>
+    <div class="actions">
+      <button class="btn" id="restart">Play Again</button>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Each answer adds points: ses = family socioeconomic status (-2 to +2),
+  // seg = how similar students' backgrounds are (segregation, 0 to 2).
+  const ROUNDS = [
+    {
+      q: "What is studying at home like for you?",
+      options: [
+        { text: "We have books, internet access, and a quiet room to study in", ses: 2, seg: 0 },
+        { text: "We share one computer, and I often do homework at the kitchen table", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "What kind of area do you live in?",
+      options: [
+        { text: "In the city center, near several different types of schools", ses: 1, seg: 0 },
+        { text: "In a neighborhood where most families are similar to mine", ses: 0, seg: 2 }
+      ]
+    },
+    {
+      q: "What extra learning support could your family afford?",
+      options: [
+        { text: "A tutor or after-school activities if needed", ses: 2, seg: 0 },
+        { text: "Only free activities offered by the school", ses: -1, seg: 0 }
+      ]
+    },
+    {
+      q: "What are the students in your class like?",
+      options: [
+        { text: "They come from different backgrounds; some have more resources than others", ses: 0, seg: 0 },
+        { text: "Most come from families like mine", ses: 0, seg: 2 }
+      ]
+    },
+    {
+      q: "Which schools could you realistically attend?",
+      options: [
+        { text: "My local school, but I could also choose another one", ses: 1, seg: 0 },
+        { text: "Only the nearby school; other options take too much time or money", ses: -1, seg: 1 }
+      ]
+    },
+    {
+      q: "What do your parents do for work?",
+      options: [
+        { text: "They work as a doctor, engineer, or teacher, or run a business", ses: 2, seg: 0 },
+        { text: "They have jobs with unpredictable schedules", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "What are conversations at home like?",
+      options: [
+        { text: "We read, discuss ideas, and play with words", ses: 1, seg: 0 },
+        { text: "We mostly have everyday conversations, with few books or little time to read", ses: -1, seg: 0 }
+      ]
+    },
+    {
+      q: "How do you spend your free time?",
+      options: [
+        { text: "I take art classes, play sports, or join clubs", ses: 2, seg: 0 },
+        { text: "I help out at home or work after school", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "Who helps you with homework?",
+      options: [
+        { text: "A parent with a strong educational background or a paid tutor", ses: 2, seg: 0 },
+        { text: "No one; I figure it out myself", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "What kind of class are you in at school?",
+      options: [
+        { text: "A selective class where students are admitted based on grades", ses: 1, seg: 2 },
+        { text: "A regular class with students from across the neighborhood", ses: 0, seg: 0 }
+      ]
+    },
+    {
+      q: "What happens if you miss classes?",
+      options: [
+        { text: "My parents notice, and we talk about why", ses: 1, seg: 0 },
+        { text: "No one asks because everyone has their own problems", ses: -1, seg: 1 }
+      ]
+    },
+    {
+      q: "What are your plans after school?",
+      options: [
+        { text: "We are planning for university and already have a field of study in mind", ses: 1, seg: 0 },
+        { text: "I am thinking about working after vocational college or ninth grade", ses: -1, seg: 0 }
+      ]
+    },
+    {
+      q: "What is the school near your home like?",
+      options: [
+        { text: "It gets strong results and offers lots of after-school activities", ses: 1, seg: 1 },
+        { text: "Most students there come from low-income families", ses: -1, seg: 2 }
+      ]
+    },
+    {
+      q: "What kind of internet access and devices do you have at home?",
+      options: [
+        { text: "Fast internet and my own laptop", ses: 2, seg: 0 },
+        { text: "Mobile internet and one phone shared by the whole family", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "Do you attend summer camps or courses?",
+      options: [
+        { text: "Yes, several programs each year", ses: 2, seg: 0 },
+        { text: "No, I spend summers at home or working", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "How do your teachers treat you?",
+      options: [
+        { text: "They expect me to go to university", ses: 1, seg: 0 },
+        { text: "They do not expect much from me", ses: -1, seg: 1 }
+      ]
+    },
+    {
+      q: "How easy is it to travel to other schools from your area?",
+      options: [
+        { text: "It is easy to get to any school in the city", ses: 1, seg: 0 },
+        { text: "The bus comes only once an hour, so I usually have to attend a nearby school", ses: -1, seg: 2 }
+      ]
+    },
+    {
+      q: "What learning materials can you afford?",
+      options: [
+        { text: "Books, dictionaries, and school supplies whenever I need them", ses: 2, seg: 0 },
+        { text: "Only required textbooks; we borrow the rest from others", ses: -2, seg: 0 }
+      ]
+    },
+    {
+      q: "Who are your friends outside school?",
+      options: [
+        { text: "People from different walks of life, including doctors, artists, and students", ses: 1, seg: 0 },
+        { text: "Mostly friends from my neighborhood, with similar family backgrounds", ses: -1, seg: 2 }
+      ]
+    },
+    {
+      q: "Do you have a quiet place to study?",
+      options: [
+        { text: "Yes, my own desk and room", ses: 2, seg: 0 },
+        { text: "No, I study in bed or in a room shared with others", ses: -2, seg: 0 }
+      ]
+    }
+  ];
+
+  const state = { round: 0, ses: 0, seg: 0, answers: [] };
+
+  const $ = (id) => document.getElementById(id);
+
+  function renderRound() {
+    const r = ROUNDS[state.round];
+    $("roundLabel").textContent = `Round ${state.round + 1} of ${ROUNDS.length}`;
+    $("bar").style.width = `${(state.round / ROUNDS.length) * 100}%`;
+    $("question").textContent = r.q;
+    const box = $("options");
+    box.innerHTML = "";
+    r.options.forEach((opt, i) => {
+      const b = document.createElement("button");
+      b.className = "opt";
+      b.type = "button";
+      b.textContent = opt.text;
+      b.addEventListener("click", () => choose(i));
+      box.appendChild(b);
+    });
+  }
+
+  function choose(i) {
+    const opt = ROUNDS[state.round].options[i];
+    state.ses += opt.ses;
+    state.seg += opt.seg;
+    state.answers.push(i);
+    state.round++;
+    if (state.round < ROUNDS.length) {
+      renderRound();
+    } else {
+      showResult();
+    }
+  }
+
+  // Group family background by the total score.
+  function familyBand(s) {
+    if (s <= -8) return { label: "Lowest Quartile (Q1)", level: 1 };
+    if (s <= 0)  return { label: "Below Average (Q2)", level: 2 };
+    if (s <= 8)  return { label: "Above Average (Q3)", level: 3 };
+    return { label: "Highest Quartile (Q4)", level: 4 };
+  }
+
+  // Segregation level: how similar students' backgrounds are.
+  function segBand(seg) {
+    if (seg >= 8) return { label: "High: most students have similar social backgrounds", level: 3 };
+    if (seg >= 4) return { label: "Moderate: noticeable separation by family background", level: 2 };
+    return { label: "Low: students come from a mix of backgrounds", level: 1 };
+  }
+
+  // School type combines family background with segregation level.
+  function schoolFor(family, seg) {
+    if (seg.level === 3 && family.level >= 3)
+      return "A private or prestigious school with mostly advantaged students";
+    if (seg.level === 3 && family.level <= 2)
+      return "A school with a high concentration of low-income students";
+    if (seg.level === 1)
+      return "A mixed city school with students from different backgrounds";
+    return "A neighborhood school with a moderately mixed student body";
+  }
+
+  function showResult() {
+    $("game").classList.add("hidden");
+    $("result").classList.remove("hidden");
+    $("bar").style.width = "100%";
+
+    const fam = familyBand(state.ses);
+    const seg = segBand(state.seg);
+    const school = schoolFor(fam, seg);
+
+    $("rFamily").textContent = fam.label;
+    $("rSeg").textContent = seg.label;
+    $("rSchool").textContent = school;
+
+    const lowStatusSchool = fam.level <= 2 && seg.level === 3;
+    const highStatusSchool = fam.level >= 3 && seg.level === 3;
+    let text;
+    if (lowStatusSchool) {
+      text = "You would likely attend a school where many students come from less advantaged backgrounds. Our research suggests that school composition is linked to student outcomes, even for students with more resources at home. Having fewer resources both at home and at school may create a double disadvantage.";
+    } else if (highStatusSchool) {
+      text = "You would likely attend a school where many students come from advantaged backgrounds. That can help, but research suggests that schools often reflect existing inequalities. Your results may depend not only on your own efforts, but also on who you learn alongside.";
+    } else if (seg.level === 1) {
+      text = "In a mixed school, family background plays a smaller role in determining who your classmates are. Research links these environments to smaller gaps between students from different backgrounds.";
+    } else {
+      text = "You are in a middle-ground situation. Family background and school composition both matter, but how strongly they are linked depends on the country and its education system.";
+    }
+    $("rText").textContent = text;
+    $("rNote").textContent = "This game is based on our research findings: family poverty and the makeup of a school are associated with student outcomes. The points assigned to answers are illustrative, not measured data.";
+  }
+
+  function restart() {
+    state.round = 0; state.ses = 0; state.seg = 0; state.answers = [];
+    $("result").classList.add("hidden");
+    $("game").classList.remove("hidden");
+    renderRound();
+  }
+
+  $("restart").addEventListener("click", restart);
+  renderRound();
+</script>
+</body>
+</html>
