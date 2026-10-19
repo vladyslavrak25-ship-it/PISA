@@ -58,6 +58,11 @@
   .hidden { display: none !important; }
   .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
   @media (max-width: 360px) { main { padding: 16px 12px 40px; } }
+  .game-footer { max-width:640px; margin:0 auto; padding:0 16px 32px; }
+  .footer-links { display:flex; flex-wrap:wrap; gap:10px; padding-top:20px; border-top:1px solid var(--line); }
+  .footer-links a { color:var(--accent); background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; font-weight:600; text-decoration:none; }
+  .footer-links a:hover,.footer-links a:focus-visible { border-color:var(--accent); text-decoration:underline; }
+  .footer-links a[aria-current="page"] { color:var(--muted); font-weight:500; }
 </style>
 </head>
 <body>
@@ -87,6 +92,13 @@
     </div>
   </section>
 </main>
+
+<footer class="game-footer">
+  <nav class="footer-links" aria-label="Switch between the PISA website and quiz">
+    <a href="index.html">← PISA research site</a>
+    <a href="game.html" aria-current="page">Interactive school quiz</a>
+  </nav>
+</footer>
 
 <script>
   // Each answer adds points: ses = family socioeconomic status (-2 to +2),
