@@ -1,6 +1,13 @@
 # PISA: family, school and the score gap
 
-An interactive page based on six PISA student studies (KSE). The main dashboard is `index.html`, and an illustrative 20-question school quiz is in `game.html`. No external JavaScript libraries (only Google Fonts on the dashboard).
+An interactive project based on six PISA student studies (KSE), featuring a research dashboard and a 20-question school quiz.
+
+## Open the project
+
+- **[Open the PISA research website](https://vladyslavrak25-ship-it.github.io/PISA/)**
+- **[Play the interactive school quiz](https://vladyslavrak25-ship-it.github.io/PISA/game.html)**
+
+Both links open the live pages, not the source code.
 
 ## What is on the page
 
@@ -14,7 +21,7 @@ An interactive page based on six PISA student studies (KSE). The main dashboard 
 
 ## Interactive school quiz
 
-Try [What Kind of School Would You Attend?](game.html): a 20-question game about family resources, school choice, and who you study with. Its scores and outcomes are illustrative, not predictions or empirical measurements for individuals.
+**What Kind of School Would You Attend?** is a 20-question game about family resources, school choice, and who you study with. Its scores and outcomes are illustrative, not predictions or empirical measurements for individuals.
 
 ## Sources
 
